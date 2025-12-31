@@ -847,21 +847,39 @@ BusHub75Matrix::BusHub75Matrix(BusConfig &bc) : Bus(bc.type, bc.start, bc.autoWh
   USER_PRINTLN("MatrixPanel_I2S_DMA - HD-WF1 S2 config");
 
   mxconfig.gpio.r1 = 2;
-  mxconfig.gpio.g1 = 6;
-  mxconfig.gpio.b1 = 3;
-  mxconfig.gpio.r2 = 4;
-  mxconfig.gpio.g2 = 8;
-  mxconfig.gpio.b2 = 5;
+  mxconfig.gpio.g1 = 6; // For some reson G and B have to be swapped for my WAVESHARE panel
+  mxconfig.gpio.b1 = 4;
+  mxconfig.gpio.r2 = 8;
+  mxconfig.gpio.g2 = 13; // For some reson G and B have to be swapped for my WAVESHARE panel
+  mxconfig.gpio.b2 = 10;
 
-  mxconfig.gpio.lat = 33;
-  mxconfig.gpio.oe  = 35;
-  mxconfig.gpio.clk = 34;
+  mxconfig.gpio.lat = 1;
+  mxconfig.gpio.oe  = 21;
+  mxconfig.gpio.clk = 17;
+
+  mxconfig.gpio.a = 40;
+  mxconfig.gpio.b = 38;
+  mxconfig.gpio.c = 36;
+  mxconfig.gpio.d = 34;
+  mxconfig.gpio.e = 14; //not connected!
+
+  /* Breadboard Layout */
+  /*mxconfig.gpio.r1 = 4;
+  mxconfig.gpio.g1 = 6;
+  mxconfig.gpio.b1 = 8;
+  mxconfig.gpio.r2 = 10;
+  mxconfig.gpio.g2 = 13;
+  mxconfig.gpio.b2 = 14;
+
+  mxconfig.gpio.lat = 1;
+  mxconfig.gpio.oe  = 2;
+  mxconfig.gpio.clk = 16;
 
   mxconfig.gpio.a = 39;
-  mxconfig.gpio.b = 38;
-  mxconfig.gpio.c = 37;
-  mxconfig.gpio.d = 36;
-  mxconfig.gpio.e = 12;
+  mxconfig.gpio.b = 37;
+  mxconfig.gpio.c = 35;
+  mxconfig.gpio.d = 33;
+  mxconfig.gpio.e = 18;*/
 
 #elif defined(ESP32_FORUM_PINOUT) // Common format for boards designed for SmartMatrix
 
